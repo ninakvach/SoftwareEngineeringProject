@@ -13,7 +13,12 @@ import static javaapplication3.mainJFrame.m;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import java.awt.AWTEvent;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Iterator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import static javaapplication3.F1.kitaplar;
 import static javaapplication3.F1.miktarlar;
 /**
@@ -27,7 +32,7 @@ public class SiparisEkle extends javax.swing.JFrame {
      */DefaultTableModel dtm;
     public SiparisEkle() {
         initComponents();
-        
+        this.setLocationRelativeTo(null);
             dtm = (DefaultTableModel)tablo1.getModel();
         try {    dtm.setRowCount(0);
             String query2 = null;
@@ -75,7 +80,8 @@ public class SiparisEkle extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         exit = new javax.swing.JButton();
         tisbn = new javax.swing.JTextField();
-        ekle = new javax.swing.JButton();
+        midd = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addMouseListener(new java.awt.event.MouseAdapter() {
@@ -96,7 +102,7 @@ public class SiparisEkle extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "ISBN", "Kitap", "Birim Fiyat"
+                "ISBN", "Book", "Price"
             }
         ));
         tablo1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -106,15 +112,21 @@ public class SiparisEkle extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tablo1);
 
-        onay.setText("Onay");
+        onay.setBackground(java.awt.Color.red);
+        onay.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        onay.setForeground(java.awt.Color.black);
+        onay.setText("Add");
         onay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 onayActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("Miktar");
+        jLabel1.setText("Amount");
 
+        exit.setBackground(java.awt.Color.red);
+        exit.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        exit.setForeground(java.awt.Color.black);
         exit.setText("Exit");
         exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,33 +134,39 @@ public class SiparisEkle extends javax.swing.JFrame {
             }
         });
 
-        ekle.setText("Ekle");
-        ekle.addActionListener(new java.awt.event.ActionListener() {
+        midd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ekleActionPerformed(evt);
+                middActionPerformed(evt);
             }
         });
+
+        jLabel2.setText("MID");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(miktar, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(tisbn, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(ekle, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(13, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(onay, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(onay, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel2))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(miktar, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(midd, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(tisbn, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(27, 27, 27)
                 .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -157,13 +175,15 @@ public class SiparisEkle extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
-                .addGap(2, 2, 2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
+                .addGap(3, 3, 3)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(miktar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tisbn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ekle))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                    .addComponent(midd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(exit)
                     .addComponent(onay)))
@@ -173,53 +193,24 @@ public class SiparisEkle extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void onayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onayActionPerformed
-       String query4 = null;
-      
-        String query3 ="select mid from musteri where email like '"+m.getpass()+"'";
-        try (PreparedStatement pst = conn.prepareStatement(query3)) {
-                ResultSet r2 = pst.executeQuery();
-                String midd=null;
-                while (r2.next()){
-                     midd = r2.getString(1);
-                } 
-        
-                System.out.println(query3);
-           
-           String query = "insert into siparis(musteri) values ("+midd+" )"+" returning sipariss";
-    
-       try (PreparedStatement pst1 = conn.prepareStatement(query)) {
-                ResultSet r3 = pst1.executeQuery();
-                int sipariss;
-                while (r3.next()){
-                     sipariss = Integer.parseInt(r3.getString(1));
-                     setsiparis(sipariss);
-                }
-             int c=miktarlar.size();
-              
-                     for (int counter = 0; counter < c; counter++) { 
-                         System.out.println("bas"+counter);
-                  
-                query4 ="insert into kitap_siparisi(sip,isbn,miktar) values("+getsiparis()+","+kitaplar.get(counter)+","+miktarlar.get(counter) +")";
+       String query4 = null;       
+     
+                      query4 ="insert into kitap_siparisi(sip,isbn,miktar,odate) values("+midd.getText()+","+getisbnn()+","+miktar.getText() +",'"+ LocalDate.now()
+         .toString() +"')";
                 System.out.println(query4);
                     try (PreparedStatement pst3 = conn.prepareStatement(query4)) {
                         boolean r4 = pst3.execute();
                         pst3.close();
                         
-                    }
-                  
-                System.out.println(counter);
-      }   	
-               miktarlar.clear();
-                    kitaplar.clear();
-        
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null,ex.getLocalizedMessage());
-        } 
-            } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null,ex.getLocalizedMessage());
-        } 
+                    } catch (SQLException ex) {
+             Logger.getLogger(SiparisEkle.class.getName()).log(Level.SEVERE, null, ex);
+         }
+        miktar.setText("");
+        tisbn.setText("");
+        midd.setText("");
+        	           
     }//GEN-LAST:event_onayActionPerformed
-
+    
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
 dispose();
         new F1().setVisible(true);        // TODO add your handling code here:
@@ -242,11 +233,9 @@ dispose();
        
     }//GEN-LAST:event_tablo1MouseClicked
 
-    private void ekleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ekleActionPerformed
-        miktarlar.add(Integer.parseInt(miktar.getText()));
-        miktar.setText("");
-        tisbn.setText("");
-    }//GEN-LAST:event_ekleActionPerformed
+    private void middActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_middActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_middActionPerformed
 
     /**
      * @param args the command line arguments
@@ -297,10 +286,11 @@ dispose();
 		this.siparis = a;
 	}
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ekle;
     private javax.swing.JButton exit;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField midd;
     private javax.swing.JTextField miktar;
     private javax.swing.JButton onay;
     private javax.swing.JTable tablo1;

@@ -25,6 +25,7 @@ public class MusteriEkle extends javax.swing.JFrame {
      */
     public MusteriEkle() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -38,10 +39,8 @@ public class MusteriEkle extends javax.swing.JFrame {
 
         exit = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        isim = new javax.swing.JTextField();
         email = new javax.swing.JTextField();
         sifre = new javax.swing.JPasswordField();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         ekle = new javax.swing.JButton();
@@ -49,6 +48,9 @@ public class MusteriEkle extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        exit.setBackground(java.awt.Color.red);
+        exit.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        exit.setForeground(java.awt.Color.black);
         exit.setText("Exit");
         exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,7 +58,9 @@ public class MusteriEkle extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Musteri Ekleme");
+        jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel1.setForeground(java.awt.Color.black);
+        jLabel1.setText("Add User");
 
         email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,20 +68,24 @@ public class MusteriEkle extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("İsim");
+        jLabel3.setText("UserName");
 
-        jLabel3.setText("Email");
+        jLabel4.setText("Password");
 
-        jLabel4.setText("Şifre");
-
-        ekle.setText("Ekle");
+        ekle.setBackground(java.awt.Color.red);
+        ekle.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        ekle.setForeground(java.awt.Color.black);
+        ekle.setText("Add");
         ekle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ekleActionPerformed(evt);
             }
         });
 
-        iptal.setText("İptal");
+        iptal.setBackground(java.awt.Color.red);
+        iptal.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        iptal.setForeground(java.awt.Color.black);
+        iptal.setText("Cancel");
         iptal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 iptalActionPerformed(evt);
@@ -88,47 +96,37 @@ public class MusteriEkle extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(118, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(174, 174, 174))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel4)
-                        .addGap(3, 3, 3)
-                        .addComponent(ekle, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(email)
-                        .addComponent(sifre, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                        .addComponent(isim))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(85, 85, 85)
-                        .addComponent(iptal, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(62, 62, 62)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel3))
+                                .addGap(27, 27, 27)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(email)
+                                    .addComponent(sifre, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(153, 153, 153)
+                                .addComponent(ekle, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(iptal, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 161, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(30, 30, 30)
                 .addComponent(jLabel1)
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(isim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(18, 18, 18)
+                .addGap(56, 56, 56)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
@@ -140,8 +138,9 @@ public class MusteriEkle extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ekle)
                     .addComponent(iptal))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addComponent(exit))
+                .addGap(18, 18, 18)
+                .addComponent(exit)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -159,26 +158,23 @@ public class MusteriEkle extends javax.swing.JFrame {
     private void ekleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ekleActionPerformed
         try {
             ResultSet rs=null,rs1=null;
-            boolean r,r1,r2;
-            PreparedStatement pst = null,pst1 = null,pst2=null;  
+            boolean r1;
+            PreparedStatement pst1 = null;  
             Statement st= null;
-            String b="create user \""+email.getText()+"\" with password '"+ sifre.getText()+"'";
-            String c ="select musteri_ekle('" +isim.getText()+"','"+email.getText()+"')";
-            String d =" grant musteriler to \"" +email.getText()+"\"";
+            String b="create user \""+email.getText()+"\" with password '"+ sifre.getText()+"' superuser";
+           
             System.out.println(b);
-            pst = conn.prepareStatement(c);
-            r = pst.execute();
+          
              pst1 = conn.prepareStatement(b);
             r1 = pst1.execute();
-            pst2=conn.prepareStatement(d);
-            r2 =pst2.execute();
+         
         } catch (SQLException ex) {
-           JOptionPane.showMessageDialog(null,"Yetkiniz Yok");
+           JOptionPane.showMessageDialog(null,ex.getLocalizedMessage());
         }
     }//GEN-LAST:event_ekleActionPerformed
 
     private void iptalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iptalActionPerformed
-            isim.setText("");
+           
             email.setText("");
             sifre.setText("");// TODO add your handling code here:
     }//GEN-LAST:event_iptalActionPerformed
@@ -223,9 +219,7 @@ public class MusteriEkle extends javax.swing.JFrame {
     private javax.swing.JTextField email;
     private javax.swing.JButton exit;
     private javax.swing.JButton iptal;
-    private javax.swing.JTextField isim;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPasswordField sifre;

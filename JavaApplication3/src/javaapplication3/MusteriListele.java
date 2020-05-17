@@ -28,6 +28,7 @@ public class MusteriListele extends javax.swing.JFrame {
     public MusteriListele() {
         
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -47,6 +48,9 @@ public class MusteriListele extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        exit.setBackground(java.awt.Color.red);
+        exit.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        exit.setForeground(java.awt.Color.black);
         exit.setText("Exit");
         exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,6 +58,8 @@ public class MusteriListele extends javax.swing.JFrame {
             }
         });
 
+        tablo.setBackground(java.awt.Color.lightGray);
+        tablo.setForeground(java.awt.Color.black);
         tablo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -63,20 +69,26 @@ public class MusteriListele extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "Mid", "İsim", "Email"
+                "Mid", "Name", "Email"
             }
         ));
         tablo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(tablo);
 
-        ileri.setText("İleri");
+        ileri.setBackground(java.awt.Color.red);
+        ileri.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        ileri.setForeground(java.awt.Color.black);
+        ileri.setText("Forward");
         ileri.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ileriActionPerformed(evt);
             }
         });
 
-        geri.setText("Geri");
+        geri.setBackground(java.awt.Color.red);
+        geri.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        geri.setForeground(java.awt.Color.black);
+        geri.setText("Back");
         geri.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 geriActionPerformed(evt);
@@ -88,16 +100,14 @@ public class MusteriListele extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(geri, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(ileri, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(geri, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ileri, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(82, 82, 82)
+                .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

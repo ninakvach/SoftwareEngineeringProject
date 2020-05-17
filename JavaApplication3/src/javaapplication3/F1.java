@@ -28,6 +28,7 @@ public class F1 extends javax.swing.JFrame {
      */
       public F1() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -45,79 +46,141 @@ public class F1 extends javax.swing.JFrame {
         musterilistele = new javax.swing.JButton();
         personelolarak = new javax.swing.JLabel();
         siparisekleme = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        logout.setText("logout");
+        logout.setBackground(java.awt.Color.red);
+        logout.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        logout.setForeground(java.awt.Color.black);
+        logout.setText("Logout");
         logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logoutActionPerformed(evt);
             }
         });
 
-        musteriEkle.setText("Müşteri Ekle");
+        musteriEkle.setBackground(java.awt.Color.red);
+        musteriEkle.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        musteriEkle.setForeground(java.awt.Color.black);
+        musteriEkle.setText("Add User");
         musteriEkle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 musteriEkleActionPerformed(evt);
             }
         });
 
-        musteriBilgileriDuzenle.setText("Müşteri Bilgileri Düzenle");
+        musteriBilgileriDuzenle.setBackground(java.awt.Color.red);
+        musteriBilgileriDuzenle.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        musteriBilgileriDuzenle.setForeground(java.awt.Color.black);
+        musteriBilgileriDuzenle.setText("Edit Customer Information");
         musteriBilgileriDuzenle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 musteriBilgileriDuzenleActionPerformed(evt);
             }
         });
 
-        musterilistele.setText("Müşteri Listeleme");
+        musterilistele.setBackground(java.awt.Color.red);
+        musterilistele.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        musterilistele.setForeground(java.awt.Color.black);
+        musterilistele.setText("Show Customers");
         musterilistele.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 musterilisteleActionPerformed(evt);
             }
         });
 
-        siparisekleme.setText("Sipariş Ekleme");
+        siparisekleme.setBackground(java.awt.Color.red);
+        siparisekleme.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        siparisekleme.setForeground(java.awt.Color.black);
+        siparisekleme.setText("Add Order");
         siparisekleme.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sipariseklemeActionPerformed(evt);
             }
         });
 
+        jButton1.setBackground(java.awt.Color.red);
+        jButton1.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jButton1.setForeground(java.awt.Color.black);
+        jButton1.setText("Add Customer");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setBackground(java.awt.Color.red);
+        jButton2.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jButton2.setForeground(java.awt.Color.black);
+        jButton2.setText("Show Orders");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel1.setForeground(java.awt.Color.black);
+        jLabel1.setText("MENU");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(72, 72, 72)
-                .addComponent(siparisekleme, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(personelolarak, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1)
+                        .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(musteriBilgileriDuzenle, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
-                            .addComponent(musterilistele, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(musteriEkle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(personelolarak, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                .addComponent(logout)
-                .addContainerGap())
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(musteriBilgileriDuzenle, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(13, 13, 13))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(musterilistele, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(siparisekleme, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(musteriEkle, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20))))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(183, 183, 183))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(musteriEkle)
-                .addGap(18, 18, 18)
-                .addComponent(musteriBilgileriDuzenle)
-                .addGap(27, 27, 27)
-                .addComponent(musterilistele)
-                .addGap(18, 18, 18)
-                .addComponent(siparisekleme)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addGap(15, 15, 15)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(musterilistele)
+                    .addComponent(musteriEkle))
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(musteriBilgileriDuzenle)
+                    .addComponent(jButton2))
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(siparisekleme))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(logout)
                     .addComponent(personelolarak, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -144,92 +207,44 @@ public class F1 extends javax.swing.JFrame {
     }//GEN-LAST:event_logoutActionPerformed
 
     private void musteriEkleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_musteriEkleActionPerformed
-         try {
-              ResultSet rsmu=null;
-              PreparedStatement pstmu=null;
-              int i = 0;
-              pstmu= conn.prepareStatement("select is_musteri()");
-              rsmu= pstmu.executeQuery();
-              while(rsmu.next()){
-                  i= rsmu.getInt(1);
-              }
-              
-              if (i!=1&& i!=2){
-                   
+         
         dispose();
-        new MusteriEkle().setVisible(true);}
-              else
-                  personelolarak.setText("Yetkiniz Yok!");
-          } catch (SQLException ex) {
-              Logger.getLogger(F1.class.getName()).log(Level.SEVERE, null, ex);
-          }
+        new MusteriEkle().setVisible(true);
        // TODO add your handling code here:
     }//GEN-LAST:event_musteriEkleActionPerformed
 
     private void musteriBilgileriDuzenleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_musteriBilgileriDuzenleActionPerformed
-         try {
-              ResultSet rsmu=null;
-              PreparedStatement pstmu=null;
-              int i = 0;
-              pstmu= conn.prepareStatement("select is_musteri()");
-              rsmu= pstmu.executeQuery();
-              while(rsmu.next()){
-                  i= rsmu.getInt(1);
-              }
-              
-              if (i!=2){
+        
                   dispose();
-        new MusteriBilgileriDuzenle().setVisible(true);}
-              else
-                  personelolarak.setText("Yetkiniz Yok!");
-          } catch (SQLException ex) {
-              Logger.getLogger(F1.class.getName()).log(Level.SEVERE, null, ex);
-          }
+        new MusteriBilgileriDuzenle().setVisible(true);
+             
         
             
     }//GEN-LAST:event_musteriBilgileriDuzenleActionPerformed
 
     private void musterilisteleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_musterilisteleActionPerformed
-          try {
-              ResultSet rsmu=null;
-              PreparedStatement pstmu=null;
-              int i = 0;
-              pstmu= conn.prepareStatement("select is_musteri()");
-              rsmu= pstmu.executeQuery();
-              while(rsmu.next()){
-                  i= rsmu.getInt(1);
-              }
-              
-              if (i!=1){
+       
                   dispose();
-                  new MusteriListele().setVisible(true);}
-              else
-                  personelolarak.setText("Yetkiniz Yok!");
-          } catch (SQLException ex) {
-              Logger.getLogger(F1.class.getName()).log(Level.SEVERE, null, ex);
-          }
+                  new MusteriListele().setVisible(true);
+            
     }//GEN-LAST:event_musterilisteleActionPerformed
 
     private void sipariseklemeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sipariseklemeActionPerformed
-        try {
-              ResultSet rsmu=null;
-              PreparedStatement pstmu=null;
-              int i = 0;
-              pstmu= conn.prepareStatement("select is_musteri()");
-              rsmu= pstmu.executeQuery();
-              while(rsmu.next()){
-                  i= rsmu.getInt(1);
-              }
-              
-              if (i!=2){
+     
        dispose();
-        new SiparisEkle().setVisible(true);}
-              else
-                  personelolarak.setText("Yetkiniz Yok!");
-          } catch (SQLException ex) {
-              Logger.getLogger(F1.class.getName()).log(Level.SEVERE, null, ex);
-          }
+        new SiparisEkle().setVisible(true);
+             
     }//GEN-LAST:event_sipariseklemeActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       dispose();
+        new CustomerEkle().setVisible(true); // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        dispose();
+        new ShowOrders().setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -267,6 +282,9 @@ public class F1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton logout;
     private javax.swing.JButton musteriBilgileriDuzenle;
     private javax.swing.JButton musteriEkle;

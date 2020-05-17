@@ -27,7 +27,7 @@ public class MusteriBilgileriDuzenle extends javax.swing.JFrame {
     public MusteriBilgileriDuzenle() {
    
         initComponents();
-       
+       this.setLocationRelativeTo(null);
     }
 
     /**
@@ -49,9 +49,13 @@ public class MusteriBilgileriDuzenle extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         not = new javax.swing.JLabel();
         sil = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jButton1.setBackground(java.awt.Color.red);
+        jButton1.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jButton1.setForeground(java.awt.Color.black);
         jButton1.setText("Exit");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -59,7 +63,9 @@ public class MusteriBilgileriDuzenle extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Müşteri Bilgileri");
+        jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel1.setForeground(java.awt.Color.black);
+        jLabel1.setText("Customer Information");
 
         mid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,6 +75,9 @@ public class MusteriBilgileriDuzenle extends javax.swing.JFrame {
 
         jLabel2.setText("Mİd");
 
+        search.setBackground(java.awt.Color.red);
+        search.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        search.setForeground(java.awt.Color.black);
         search.setText("Search");
         search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,75 +93,91 @@ public class MusteriBilgileriDuzenle extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Onay");
+        jButton2.setBackground(java.awt.Color.red);
+        jButton2.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jButton2.setForeground(java.awt.Color.black);
+        jButton2.setText("Apply");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        sil.setText("Sil");
+        sil.setBackground(java.awt.Color.red);
+        sil.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        sil.setForeground(java.awt.Color.black);
+        sil.setText("Delete");
         sil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 silActionPerformed(evt);
             }
         });
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication3/tools.png"))); // NOI18N
+        jLabel3.setText("jLabel3");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(116, 116, 116)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(2, 2, 2)
-                        .addComponent(mid, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(search))
-                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(mmid, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(not, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(135, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(mail, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(not, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(mail, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(43, 43, 43)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(sil, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(150, Short.MAX_VALUE))
+                            .addComponent(sil, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(mmid, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(mid, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(search))))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(mid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(search))
-                .addGap(18, 18, 18)
-                .addComponent(mmid)
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(mail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2))
-                .addGap(18, 18, 18)
-                .addComponent(sil)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(mid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2)
+                            .addComponent(search))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(mmid)
+                        .addGap(27, 27, 27)
+                        .addComponent(mail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(sil)
+                            .addComponent(jButton2)))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(not)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                .addComponent(jButton1))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addGap(36, 36, 36))
         );
 
         pack();
@@ -179,31 +204,15 @@ public class MusteriBilgileriDuzenle extends javax.swing.JFrame {
             String isper = null;
                String a = null,b=null;
             int i = 0;
-            pst3= conn.prepareStatement("select is_musteri()");
-            rs3= pst3.executeQuery();
-            while(rs3.next()){
-            i= rs3.getInt(1);
-            }
-            
-            if (i==1){
-             pst2 = conn.prepareStatement("Select * from musterinin_bilgisini_getir");
-            rs2= pst2.executeQuery();
-            while(rs2.next()){
-            mal= rs2.getString(3);
-            id=rs2.getString(1);
-            }
            
-            }
-            
-            else{
             id=mid.getText();
-            }
-            String c ="select search_musteri(" +id+")";
+            
+            String c ="select search_customer(" +id+")";
             String d ="select search_email(" +id+")";
           
             pst = conn.prepareStatement(c);
             rs= pst.executeQuery();
-            pst1 = conn.prepareStatement(d);
+          pst1 = conn.prepareStatement(d);
             rs1= pst1.executeQuery();
          
             
@@ -222,7 +231,7 @@ public class MusteriBilgileriDuzenle extends javax.swing.JFrame {
             mail.setText(b);
            // isimm.setText(b);
         } catch (SQLException ex) {
-            Logger.getLogger(MusteriBilgileriDuzenle.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null,ex.getLocalizedMessage());
         }
             
     }//GEN-LAST:event_searchActionPerformed
@@ -235,7 +244,7 @@ public class MusteriBilgileriDuzenle extends javax.swing.JFrame {
         try { 
             boolean rs4;
             PreparedStatement pst4;
-            String degistir="select email_degistir("+mid.getText()+",'"+mail.getText()+"')";
+            String degistir="select change_email("+mid.getText()+",'"+mail.getText()+"')";
             
             pst4= conn.prepareStatement(degistir);
             rs4 = pst4.execute();
@@ -249,17 +258,12 @@ public class MusteriBilgileriDuzenle extends javax.swing.JFrame {
         try {
             boolean rs5;
             PreparedStatement pst5;
-            String silme="select musteri_sil("+mid.getText()+")";
+            String silme="select delete_customer("+mid.getText()+")";
             System.out.println(silme);
             pst5= conn.prepareStatement(silme);
             rs5 = pst5.execute();
             
-             boolean rs6;
-            PreparedStatement pst6;
-            String sill="drop role \""+mail.getText()+"\"";
-            System.out.println(sill);
-            pst6= conn.prepareStatement(sill);
-            rs6 = pst6.execute();
+         
                       
         } catch (SQLException ex) {
            JOptionPane.showMessageDialog(null,ex.getLocalizedMessage());
@@ -310,6 +314,7 @@ public class MusteriBilgileriDuzenle extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField mail;
     private javax.swing.JTextField mid;
     private javax.swing.JLabel mmid;
